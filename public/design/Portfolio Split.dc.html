@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-dee00dab-bd63-45ec-ad2f-0b3a81ffac3b/styles.css">
+<script src="_ds/modernist-dee00dab-bd63-45ec-ad2f-0b3a81ffac3b/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+<style>
+  body { margin: 0; background: #f3f2f2; }
+  a { color: #201e1d; text-decoration: none; }
+  a:hover { color: #ec3013; }
+  a.btn-primary, a.btn-primary:hover { color: #f3f2f2; }
+  a.btn-secondary, a.btn-secondary:hover { color: #201e1d; }
+  @media (max-width: 1000px) {
+    [data-r="bio"], [data-r="two"], [data-r="case"], [data-r="three"], [data-r="pair"] { grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; }
+    [data-r="case"] { gap: 32px !important; }
+    [data-r="pair"] { gap: 16px !important; }
+    [data-r="bio"] > div, [data-r="three"] > div { border-right: 0 !important; border-bottom: 1px solid var(--color-divider); padding-right: 0 !important; padding-left: 0 !important; }
+    [data-r="two"] { gap: 12px !important; padding-bottom: 18px !important; }
+    [data-r="aside"] { border-left: 0 !important; border-top: 2px solid var(--color-divider) !important; padding-left: 0 !important; padding-top: 24px !important; }
+    [data-r="prow"] { grid-template-columns: 40px minmax(0, 1fr) !important; gap: 6px 16px !important; }
+  }
+  @media (max-width: 700px) {
+    [data-r="pad"] { padding-left: 20px !important; padding-right: 20px !important; }
+    [data-r="four"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    [data-r="crumb"] { display: none !important; }
+    [data-r="mock"] { padding: 14px !important; }
+    [data-r="scroll"] { overflow-x: auto !important; }
+    [data-r="scroll"] > * { min-width: 460px; }
+  }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: var(--color-bg); border-bottom: 2px solid var(--color-divider)">
+    <div data-r="pad" style="max-width: 1200px; margin: 0 auto; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+      <span onClick="{{ goHome }}" style="display: flex; align-items: center; gap: 12px; cursor: pointer">
+        <span style="display: grid; place-items: center; width: 32px; height: 32px; background: var(--color-accent); color: var(--color-bg); font-family: var(--font-heading); font-weight: 900; font-size: 13px">MG</span>
+        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; letter-spacing: 0.02em">MUHAMMAD GAD</span>
+      </span>
+      <div style="display: flex; align-items: center; gap: 18px">
+        <span data-r="crumb" style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">{{ crumb }}</span>
+        <a class="btn btn-primary" href="uploads/Muhammad Gad - Frontend Engineer - CV - September 2026.pdf" download="Muhammad-Gad-Frontend-Engineer-CV.pdf" style="flex: 0 0 auto; white-space: nowrap; gap: 8px; padding: 9px 13px; font-size: 12px; letter-spacing: 0.06em">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ onIndex }}" hint-placeholder-val="{{ true }}">
+    <section data-r="pad" style="max-width: 1200px; margin: 0 auto; padding: 0 40px">
+      <div style="padding: 56px 0 32px; border-bottom: 2px solid var(--color-divider)">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">Frontend Engineer — Tanta, Egypt</span>
+        <h1 style="font-size: clamp(48px, 8vw, 112px); line-height: 0.92; letter-spacing: -0.035em; margin: 18px 0 0; text-transform: uppercase">Muhammad<br>Gad</h1>
+        <p style="font-size: 20px; line-height: 1.4; max-width: 620px; margin: 28px 0 0">React and Next.js interfaces — production dashboards, server-rendered booking flows, and Chrome extensions that give people their attention back.</p>
+      </div>
+
+    <sc-if value="{{ available }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 2px solid var(--color-divider); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">
+        <span style="width: 10px; height: 10px; background: var(--color-accent)"></span>
+        <span>Open to frontend roles — remote or on-site</span>
+      </div>
+    </sc-if>
+
+    <div data-r="bio" style="display: grid; grid-template-columns: 260px minmax(0, 1fr) 240px; gap: 0; border-bottom: 2px solid var(--color-divider)">
+      <div style="padding: 40px 32px 40px 0; border-right: 1px solid var(--color-divider)">
+        <h6 style="color: var(--color-neutral-600); margin-bottom: 14px">Biography</h6>
+        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 28px">
+          Aerospace Communication graduate turned frontend engineer. I care about state that stays honest, interfaces that stay quick, and code a teammate can read six months later.
+        </p>
+        <h6 style="color: var(--color-neutral-600); margin-bottom: 14px">Contact</h6>
+        <div style="display: grid; gap: 6px; font-size: 15px; margin-bottom: 28px">
+          <a href="mailto:gad.software@outlook.com">gad.software@outlook.com</a>
+          <a href="tel:+201069429820">+20 106 942 9820</a>
+          <span>Tanta, Al-Gharbia, Egypt</span>
+        </div>
+        <h6 style="color: var(--color-neutral-600); margin-bottom: 14px">What I do</h6>
+        <div style="display: grid; gap: 6px; font-size: 15px">
+          <span>Web app engineering</span>
+          <span>Design-to-React implementation</span>
+          <span>Chrome extension development</span>
+          <span>Performance &amp; state architecture</span>
+        </div>
+      </div>
+
+      <div style="padding: 40px 32px; border-right: 1px solid var(--color-divider)">
+        <div style="background: var(--color-accent); color: var(--color-bg); min-height: 560px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between">
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8">Statement</span>
+          <h2 style="font-size: clamp(30px, 4.6vw, 68px); line-height: 0.98; letter-spacing: -0.03em; margin: 0; color: var(--color-bg); text-transform: uppercase; text-wrap: balance; overflow-wrap: break-word">Interfaces that respect your attention.</h2>
+          <div style="display: flex; align-items: end; justify-content: space-between; gap: 24px; border-top: 2px solid rgba(243, 242, 242, 0.5); padding-top: 20px">
+            <span style="font-size: 14px; line-height: 1.5; max-width: 340px">No dark patterns, no needless motion, no waiting on a spinner that could have been server-rendered.</span>
+            <span style="font-family: var(--font-heading); font-weight: 900; font-size: 13px; letter-spacing: 0.1em">MG</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 40px 0 40px 32px; display: grid; gap: 34px; align-content: start">
+        <div>
+          <h6 style="color: var(--color-neutral-600); margin-bottom: 8px">Core stack</h6>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; line-height: 1.1">React<br>Next.js</div>
+        </div>
+        <div>
+          <h6 style="color: var(--color-neutral-600); margin-bottom: 8px">Shipped projects</h6>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 46px; line-height: 1">06</div>
+        </div>
+        <div>
+          <h6 style="color: var(--color-neutral-600); margin-bottom: 8px">Chrome extensions</h6>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 46px; line-height: 1">02</div>
+        </div>
+        <div>
+          <h6 style="color: var(--color-neutral-600); margin-bottom: 8px">Typed codebases</h6>
+          <div style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; line-height: 1.1">TypeScript<br>first</div>
+        </div>
+      </div>
+    </div>
+
+  <section id="stack" style="max-width: 100%; margin: 0; padding: 56px 0 0">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 36px">
+      <h2 style="font-size: clamp(34px, 4.4vw, 60px); margin: 0; text-transform: uppercase; letter-spacing: -0.03em">The Stack</h2>
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">Tools I reach for daily</span>
+    </div>
+    <div style="border-top: 2px solid var(--color-divider)">
+      <sc-for list="{{ stack }}" as="row" hint-placeholder-count="5">
+        <div data-r="two" style="display: grid; grid-template-columns: 300px 1fr; gap: 32px; padding: 22px 0; border-bottom: 1px solid var(--color-divider); align-items: start">
+          <div style="display: flex; gap: 14px; align-items: baseline">
+            <span style="font-size: 12px; font-weight: 700; color: var(--color-accent)">{{ row.num }}</span>
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; line-height: 1.2">{{ row.label }}</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{ row.items }}" as="item" hint-placeholder-count="4">
+              <span style="display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--color-divider); font-size: 13px; font-weight: 600; line-height: 1">
+                <sc-if value="{{ item.icon }}">
+                  <span style="width: 17px; height: 17px; display: block; opacity: 0.9; background-image: {{ item.iconCss }}; background-size: contain; background-position: center; background-repeat: no-repeat"></span>
+                </sc-if>
+                {{ item.label }}
+              </span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 40px 0 20px">
+        <h2 style="font-size: clamp(28px, 3.4vw, 44px); margin: 0; text-transform: uppercase; letter-spacing: -0.03em">Work</h2>
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">Six projects — open one for the full case</span>
+      </div>
+
+      <div style="border-top: 2px solid var(--color-text)">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+          <div data-r="prow" onClick="{{ p.open }}" style="display: grid; grid-template-columns: 56px minmax(0, 1.05fr) minmax(0, 1fr) 150px; gap: 24px; align-items: start; padding: 26px 0; border-bottom: 1px solid var(--color-divider); cursor: pointer" style-hover="background: var(--color-neutral-200)">
+            <span style="font-family: var(--font-heading); font-weight: 900; font-size: 15px; color: var(--color-accent)">{{ p.num }}</span>
+            <span style="display: grid; gap: 8px; min-width: 0">
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">{{ p.kind }}</span>
+              <span style="font-family: var(--font-heading); font-weight: 800; font-size: 26px; line-height: 1.1; letter-spacing: -0.02em">{{ p.title }}</span>
+            </span>
+            <span style="font-size: 15px; line-height: 1.5; min-width: 0">{{ p.short }}</span>
+            <span style="display: grid; gap: 8px; justify-items: start">
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-600)">{{ p.stackLine }}</span>
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; background: var(--color-text); color: var(--color-bg); padding: 7px 10px">Open case →</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+
+  <section id="path" style="max-width: 100%; margin: 0; padding: 56px 0 0">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 36px">
+      <h2 style="font-size: clamp(34px, 4.4vw, 60px); margin: 0; text-transform: uppercase; letter-spacing: -0.03em">Experience &amp; Education</h2>
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">2020 — present</span>
+    </div>
+    <div data-r="three" style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider)">
+      <div style="padding: 36px 32px 40px 0; border-right: 1px solid var(--color-divider)">
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-neutral-600); margin-bottom: 24px">2020 — 2025</div>
+        <h4 style="font-size: 22px; margin: 0 0 6px; line-height: 1.15">B.Sc. Aerospace Communication</h4>
+        <div style="font-size: 14px; color: var(--color-neutral-700); margin-bottom: 14px">Beni-Suef University, Egypt</div>
+        <p style="font-size: 15px; line-height: 1.55; margin: 0">Satellite and navigation technologies — a signals background that made debugging state and data flow feel familiar.</p>
+      </div>
+      <div style="padding: 36px 32px 40px; border-right: 1px solid var(--color-divider)">
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-neutral-600); margin-bottom: 24px">NOV 2023 — MAY 2024</div>
+        <h4 style="font-size: 22px; margin: 0 0 6px; line-height: 1.15">Frontend Developer Intern</h4>
+        <div style="font-size: 14px; color: var(--color-neutral-700); margin-bottom: 14px">Almdrasa — Remote</div>
+        <p style="font-size: 15px; line-height: 1.55; margin: 0">A professional internship in front-end development: an intensive curriculum spent mastering React fundamentals, component patterns, and shipping discipline.</p>
+      </div>
+      <div style="padding: 36px 0 40px 32px">
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-neutral-600); margin-bottom: 24px">2024 — PRESENT</div>
+        <h4 style="font-size: 22px; margin: 0 0 6px; line-height: 1.15">Independent Product Work</h4>
+        <div style="font-size: 14px; color: var(--color-neutral-700); margin-bottom: 14px">Self-directed</div>
+        <p style="font-size: 15px; line-height: 1.55; margin: 0">Designing, building and publishing my own tools — two Chrome extensions and a full-stack booking product, front to back.</p>
+      </div>
+    </div>
+  </section>
+
+      <div data-r="three" style="padding: 48px 0 64px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; border-top: 2px solid var(--color-divider); margin-top: 24px">
+        <span style="display: grid; gap: 6px">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">Email</span>
+          <a href="mailto:gad.software@outlook.com" style="font-family: var(--font-heading); font-weight: 800; font-size: 17px">gad.software@outlook.com</a>
+        </span>
+        <span style="display: grid; gap: 6px">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">Phone</span>
+          <a href="tel:+201069429820" style="font-family: var(--font-heading); font-weight: 800; font-size: 17px">+20 106 942 9820</a>
+        </span>
+        <span style="display: grid; gap: 6px">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">Elsewhere</span>
+          <a href="https://github.com/GADMuhammad" target="_blank" style="font-family: var(--font-heading); font-weight: 800; font-size: 17px">github.com/GADMuhammad</a>
+        </span>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ onCase }}">
+    <section data-r="pad" style="max-width: 1200px; margin: 0 auto; padding: 0 40px 72px">
+      <div style="padding: 28px 0">
+        <span onClick="{{ goHome }}" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--color-divider); padding: 9px 12px">← All work</span>
+      </div>
+      <div data-r="case" style="border-top: 2px solid var(--color-text); padding-top: 32px; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start">
+        <div>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">{{ current.num }} — {{ current.kind }}</span>
+          <h1 style="font-size: clamp(34px, 5vw, 68px); line-height: 1; letter-spacing: -0.03em; margin: 14px 0 20px">{{ current.title }}</h1>
+          <p style="font-size: 19px; line-height: 1.5; max-width: 680px; margin: 0 0 28px">{{ current.blurb }}</p>
+
+          <sc-if value="{{ current.compare }}">
+            <div style="display: grid; gap: 20px; min-width: 0">
+            <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+              <div style="margin-bottom: 18px">
+                <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700)">New in v1.2.0</span>
+                <h4 style="font-size: 24px; margin: 6px 0 6px; letter-spacing: -0.02em">Search results, as a grid.</h4>
+                <p style="font-size: 13px; line-height: 1.5; margin: 0; color: var(--color-neutral-700)">One endless column becomes a tidy card grid — exactly like the homepage you already read fast.</p>
+              </div>
+              <div data-r="pair" style="display: grid; grid-template-columns: 1fr 28px 1fr; gap: 12px; align-items: center">
+                <div style="border: 1px solid var(--color-divider); padding: 12px; display: grid; gap: 10px">
+                  <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">List</span>
+                  <sc-for list="{{ threeRows }}" as="n" hint-placeholder-count="3">
+                    <span style="display: grid; grid-template-columns: 1fr 54px; gap: 8px; align-items: center">
+                      <span style="display: grid; gap: 5px">
+                        <span style="height: 7px; background: var(--color-neutral-300); display: block"></span>
+                        <span style="height: 7px; width: 62%; background: var(--color-neutral-300); display: block"></span>
+                      </span>
+                      <span style="height: 32px; background: var(--color-neutral-300); display: block"></span>
+                    </span>
+                  </sc-for>
+                </div>
+                <div style="display: grid; place-items: center; color: var(--color-accent)">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+                </div>
+                <div style="border: 2px solid var(--color-text); padding: 12px; display: grid; gap: 10px">
+                  <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">Grid</span>
+                  <span style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px">
+                    <sc-for list="{{ sixCards }}" as="n" hint-placeholder-count="6">
+                      <span style="display: grid; gap: 4px">
+                        <span style="height: 30px; background: var(--color-neutral-300); display: block"></span>
+                        <span style="height: 5px; background: var(--color-neutral-300); display: block"></span>
+                        <span style="height: 5px; width: 60%; background: var(--color-neutral-300); display: block"></span>
+                      </span>
+                    </sc-for>
+                  </span>
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px">
+                <sc-for list="{{ tweakChips }}" as="c" hint-placeholder-count="4">
+                  <span style="border: 1px solid var(--color-divider); padding: 9px 11px; font-size: 11px; font-weight: 700">{{ c }}</span>
+                </sc-for>
+              </div>
+            </div>
+
+            <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px; margin-top: 20px">
+              <div style="margin-bottom: 18px">
+                <h4 style="font-size: 24px; margin: 0 0 6px; letter-spacing: -0.02em">You choose when to stop.</h4>
+                <p style="font-size: 13px; line-height: 1.5; margin: 0; color: var(--color-neutral-700)">Infinite scroll is built to keep you here. YouTube Tweak swaps it for a single button — so watching stays a decision, not a reflex.</p>
+              </div>
+              <div data-r="pair" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px">
+                <div style="border: 1px solid var(--color-divider); padding: 12px">
+                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px">
+                    <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">Before</span>
+                    <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 6px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">Never stops</span>
+                  </div>
+                  <sc-for list="{{ compareRows }}" as="v" hint-placeholder-count="3">
+                    <div style="display: grid; grid-template-columns: 66px 1fr; gap: 9px; margin-bottom: 11px; align-items: start">
+                      <span style="height: 38px; background: var(--color-neutral-300); position: relative; display: block"></span>
+                      <span style="display: grid; gap: 2px; min-width: 0">
+                        <span style="font-size: 11px; font-weight: 700; line-height: 1.25">{{ v.title }}</span>
+                        <span style="font-size: 9px; color: var(--color-neutral-600)">{{ v.relative }}</span>
+                      </span>
+                    </div>
+                  </sc-for>
+                  <div style="border-top: 1px solid var(--color-neutral-300); padding-top: 10px; text-align: left; font-size: 10px; color: var(--color-neutral-600)">Loading forever…</div>
+                </div>
+                <div style="border: 2px solid var(--color-text); padding: 12px">
+                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px">
+                    <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase">After</span>
+                    <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 6px; background: var(--color-accent); color: var(--color-bg)">You decide</span>
+                  </div>
+                  <sc-for list="{{ compareRows }}" as="v" hint-placeholder-count="3">
+                    <div style="display: grid; grid-template-columns: 66px 1fr; gap: 9px; margin-bottom: 11px; align-items: start">
+                      <span style="height: 38px; background: var(--color-neutral-300); display: block"></span>
+                      <span style="display: grid; gap: 2px; min-width: 0">
+                        <span style="font-size: 11px; font-weight: 700; line-height: 1.25">{{ v.title }}</span>
+                        <span style="font-size: 9px; color: var(--color-neutral-600)">{{ v.absolute }}</span>
+                      </span>
+                    </div>
+                  </sc-for>
+                  <div style="border-top: 1px solid var(--color-neutral-300); padding-top: 10px; display: grid; gap: 6px">
+                    <span style="background: var(--color-accent); color: var(--color-bg); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 9px 10px">Load more videos</span>
+                    <span style="font-size: 9px; color: var(--color-neutral-600)">The decision is yours</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ current.mock }}">
+            <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+              <div style="display: flex; align-items: center; gap: 10px; border: 1px solid var(--color-divider); padding: 12px 14px; margin-bottom: 16px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                <span style="font-size: 14px; color: var(--color-neutral-600)">Search 343 bookmarks or Google…</span>
+              </div>
+              <sc-for list="{{ mockRows }}" as="r" hint-placeholder-count="7">
+                <div style="display: grid; grid-template-columns: 26px 1fr auto; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--color-neutral-300)">
+                  <span style="width: 26px; height: 26px; border: 1px solid var(--color-neutral-300); background-image: {{ r.iconCss }}; background-size: 15px; background-position: center; background-repeat: no-repeat"></span>
+                  <span style="display: grid; gap: 1px; min-width: 0">
+                    <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; line-height: 1.2">{{ r.title }}</span>
+                    <span style="font-size: 11px; color: var(--color-neutral-600); letter-spacing: 0.01em">{{ r.domain }}</span>
+                  </span>
+                  <span style="font-size: 11px; font-weight: 700; padding: 3px 7px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">{{ r.key }}</span>
+                </div>
+              </sc-for>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; border-top: 2px solid var(--color-text); padding-top: 14px">
+                <span style="font-size: 13px">Search Google for <span style="color: var(--color-accent-700); font-weight: 700">“bookmarks”</span></span>
+                <span style="font-size: 11px; font-weight: 700; padding: 3px 7px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">⌘G</span>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ current.dash }}">
+            <div style="display: grid; gap: 20px; min-width: 0">
+              <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px">
+                  <h4 style="font-size: 22px; margin: 0; letter-spacing: -0.02em">Dashboard</h4>
+                  <span style="display: flex; border: 1px solid var(--color-divider); font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">
+                    <span style="padding: 4px 7px; background: var(--color-accent); color: var(--color-bg)">7 days</span>
+                    <span style="padding: 4px 7px; color: var(--color-neutral-600)">30 days</span>
+                    <span style="padding: 4px 7px; color: var(--color-neutral-600)">90 days</span>
+                  </span>
+                </div>
+                <div data-r="four" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px">
+                  <sc-for list="{{ dashStats }}" as="k" hint-placeholder-count="4">
+                    <span style="border: 1px solid var(--color-divider); padding: 10px; display: grid; gap: 4px">
+                      <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">{{ k.label }}</span>
+                      <span style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 1">{{ k.value }}</span>
+                    </span>
+                  </sc-for>
+                </div>
+                <div data-r="pair" style="display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px">
+                  <div>
+                    <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">Today</span>
+                    <div style="border-top: 1px solid var(--color-neutral-300); margin-top: 8px">
+                      <sc-for list="{{ todayRows }}" as="t" hint-placeholder-count="5">
+                        <div style="display: grid; grid-template-columns: 58px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--color-neutral-300)">
+                          <span style="display: inline-block; white-space: nowrap; font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--color-divider); padding: 2px 4px; text-align: left">{{ t.state }}</span>
+                          <span style="display: grid; gap: 1px; min-width: 0">
+                            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; font-weight: 700">{{ t.guest }}</span>
+                            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 9px; color: var(--color-neutral-600)">{{ t.nights }}</span>
+                          </span>
+                          <span style="display: inline-block; white-space: nowrap; font-size: 8px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--color-text); color: var(--color-bg); padding: 4px 6px">{{ t.action }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                  <div>
+                    <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-600)">Stay duration</span>
+                    <div style="border-top: 1px solid var(--color-neutral-300); margin-top: 8px; display: grid; gap: 9px; padding-top: 9px">
+                      <sc-for list="{{ stayBars }}" as="b" hint-placeholder-count="4">
+                        <span style="display: grid; grid-template-columns: 62px minmax(0, 1fr) 24px; gap: 8px; align-items: center">
+                          <span style="font-size: 10px">{{ b.label }}</span>
+                          <span style="height: 8px; background: var(--color-neutral-300); display: block; position: relative">
+                            <span style="position: absolute; inset: 0 auto 0 0; width: {{ b.pct }}; background: var(--color-text); display: block"></span>
+                          </span>
+                          <span style="font-size: 9px; font-weight: 700; text-align: right">{{ b.count }}</span>
+                        </span>
+                      </sc-for>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px">
+                  <h4 style="font-size: 22px; margin: 0; letter-spacing: -0.02em">All bookings</h4>
+                  <span style="display: flex; gap: 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">
+                    <span style="display: inline-block; white-space: nowrap; padding: 3px 6px; background: var(--color-accent); color: var(--color-bg)">All</span>
+                    <span style="display: inline-block; white-space: nowrap; padding: 3px 6px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">Checked in</span>
+                    <span style="display: inline-block; white-space: nowrap; padding: 3px 6px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">Unconfirmed</span>
+                  </span>
+                </div>
+                <div data-r="scroll">
+                <div style="display: grid; grid-template-columns: 44px minmax(0, 1.2fr) minmax(0, 1.1fr) 88px 74px; gap: 8px; padding: 8px 0; border-top: 2px solid var(--color-text); border-bottom: 1px solid var(--color-neutral-300); font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">
+                  <span>Cabin</span><span>Guest</span><span>Dates</span><span>Status</span><span style="text-align: right">Amount</span>
+                </div>
+                <sc-for list="{{ bookingRows }}" as="r" hint-placeholder-count="5">
+                  <div style="display: grid; grid-template-columns: 44px minmax(0, 1.2fr) minmax(0, 1.1fr) 88px 74px; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--color-neutral-300); align-items: center">
+                    <span style="font-size: 10px; font-weight: 700">{{ r.cabin }}</span>
+                    <span style="display: grid; gap: 1px; min-width: 0">
+                      <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; font-weight: 700">{{ r.guest }}</span>
+                      <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 9px; color: var(--color-neutral-600)">{{ r.email }}</span>
+                    </span>
+                    <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 9px; color: var(--color-neutral-700)">{{ r.dates }}</span>
+                    <span style="display: inline-block; white-space: nowrap; font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--color-divider); padding: 2px 4px; justify-self: start">{{ r.status }}</span>
+                    <span style="font-size: 10px; font-weight: 700; text-align: right">{{ r.amount }}</span>
+                  </div>
+                </sc-for>
+                </div>
+                <div style="display: flex; gap: 8px; margin-top: 14px">
+                  <span style="display: inline-block; white-space: nowrap; font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: var(--color-accent); color: var(--color-bg); padding: 7px 9px">Add new cabin</span>
+                  <span style="display: inline-block; white-space: nowrap; font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--color-divider); padding: 7px 9px; color: var(--color-neutral-700)">See details</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ current.guest }}">
+            <div style="display: grid; gap: 20px; min-width: 0">
+              <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+                <h4 style="font-size: 22px; margin: 0 0 6px; letter-spacing: -0.02em">Our luxury cabins</h4>
+                <p style="font-size: 12px; line-height: 1.5; margin: 0 0 14px; color: var(--color-neutral-700)">Cabins in the heart of the Italian Dolomites — server-rendered, filterable by capacity.</p>
+                <div style="display: flex; gap: 6px; margin-bottom: 14px; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">
+                  <span style="padding: 4px 7px; background: var(--color-accent); color: var(--color-bg)">All</span>
+                  <span style="padding: 4px 7px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">2–3</span>
+                  <span style="padding: 4px 7px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">4–7</span>
+                  <span style="padding: 4px 7px; border: 1px solid var(--color-divider); color: var(--color-neutral-700)">8–12</span>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+                  <sc-for list="{{ cabins }}" as="c" hint-placeholder-count="4">
+                    <span style="border: 1px solid var(--color-divider); display: grid; grid-template-columns: 52px minmax(0, 1fr)">
+                      <span style="background: var(--color-neutral-300); display: block"></span>
+                      <span style="display: grid; gap: 3px; padding: 9px 10px; min-width: 0">
+                        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 12px">{{ c.name }}</span>
+                        <span style="font-size: 9px; color: var(--color-neutral-600)">{{ c.capacity }}</span>
+                        <span style="font-size: 11px; font-weight: 700">{{ c.price }}</span>
+                        <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-700)">Details &amp; reservation →</span>
+                      </span>
+                    </span>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+                <h4 style="font-size: 20px; margin: 0 0 14px; letter-spacing: -0.02em">Reserve 003 today. Pay on arrival.</h4>
+                <div data-r="pair" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px">
+                  <div>
+                    <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">June 2024</span>
+                    <span style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; margin-top: 8px">
+                      <sc-for list="{{ calendar }}" as="d" hint-placeholder-count="30">
+                        <span style="aspect-ratio: 1; display: grid; place-items: center; font-size: 8px; font-weight: 700; background: {{ d.bg }}; color: {{ d.fg }}">{{ d.n }}</span>
+                      </sc-for>
+                    </span>
+                    <span style="display: flex; justify-content: space-between; gap: 8px; margin-top: 10px; border-top: 1px solid var(--color-neutral-300); padding-top: 8px; font-size: 10px">
+                      <span>$300 / night × 14</span>
+                      <span style="font-weight: 800">$4,200</span>
+                    </span>
+                  </div>
+                  <div style="display: grid; gap: 8px; align-content: start">
+                    <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">Logged in as</span>
+                    <span style="border: 1px solid var(--color-divider); padding: 7px 9px; font-size: 10px; font-weight: 700">Jonas S. · Google OAuth</span>
+                    <span style="font-size: 9px; color: var(--color-neutral-600)">How many guests?</span>
+                    <span style="border: 1px solid var(--color-divider); padding: 7px 9px; font-size: 10px">2 guests</span>
+                    <span style="font-size: 9px; color: var(--color-neutral-600)">Anything we should know?</span>
+                    <span style="border: 1px solid var(--color-divider); padding: 7px 9px; height: 34px; font-size: 9px; color: var(--color-neutral-500)">Pets, allergies, requirements…</span>
+                    <span style="background: var(--color-accent); color: var(--color-bg); font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 10px">Reserve now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ current.shop }}">
+            <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+              <div data-r="pair" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px">
+                <div>
+                  <h4 style="font-size: 22px; margin: 0 0 12px; letter-spacing: -0.02em">Desserts</h4>
+                  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px">
+                    <sc-for list="{{ desserts }}" as="d" hint-placeholder-count="6">
+                      <span style="display: grid; gap: 4px; min-width: 0">
+                        <span style="aspect-ratio: 1; background: var(--color-neutral-300); display: block; position: relative">
+                          <span style="position: absolute; left: 6px; right: 6px; bottom: 6px; background: var(--color-neutral-100); border: 1px solid var(--color-text); font-size: 7px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 4px; text-align: center">Add to cart</span>
+                        </span>
+                        <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 8px; color: var(--color-neutral-600)">{{ d.kind }}</span>
+                        <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; font-weight: 700">{{ d.name }}</span>
+                        <span style="font-size: 10px; font-weight: 800; color: var(--color-accent-700)">{{ d.price }}</span>
+                      </span>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="border: 1px solid var(--color-divider); padding: 12px; align-content: start; display: grid; gap: 8px">
+                  <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; color: var(--color-accent-700)">Your cart (3)</span>
+                  <sc-for list="{{ cartRows }}" as="c" hint-placeholder-count="3">
+                    <span style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; border-bottom: 1px solid var(--color-neutral-300); padding-bottom: 6px">
+                      <span style="display: grid; gap: 1px; min-width: 0">
+                        <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; font-weight: 700">{{ c.name }}</span>
+                        <span style="font-size: 8px; color: var(--color-neutral-600)">{{ c.qty }}</span>
+                      </span>
+                      <span style="font-size: 10px; font-weight: 700">{{ c.total }}</span>
+                    </span>
+                  </sc-for>
+                  <span style="display: flex; justify-content: space-between; gap: 8px; font-size: 10px; padding-top: 2px">
+                    <span style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--color-neutral-600)">Order total</span>
+                    <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px">$24.50</span>
+                  </span>
+                  <span style="background: var(--color-accent); color: var(--color-bg); font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 10px; text-align: left">Confirm order</span>
+                  <span style="font-size: 8px; color: var(--color-neutral-600)">Saved to localStorage — survives refresh</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ current.atlas }}">
+            <div data-om-raster="true" data-r="mock" style="border: 2px solid var(--color-text); background: var(--color-neutral-100); padding: 20px">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 2px solid var(--color-text); padding-bottom: 10px; margin-bottom: 14px">
+                <h4 style="font-size: 18px; margin: 0; letter-spacing: -0.02em">Where in the world?</h4>
+                <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">Dark mode ●</span>
+              </div>
+              <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 10px; margin-bottom: 14px">
+                <span style="border: 1px solid var(--color-divider); padding: 8px 10px; font-size: 10px; color: var(--color-neutral-600)">Search for a country…</span>
+                <span style="border: 1px solid var(--color-divider); padding: 8px 10px; font-size: 10px; display: flex; justify-content: space-between; gap: 6px"><span>Filter by region</span><span>▾</span></span>
+              </div>
+              <div data-r="four" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px">
+                <sc-for list="{{ countries }}" as="c" hint-placeholder-count="4">
+                  <span style="border: 1px solid var(--color-divider); display: grid; min-width: 0">
+                    <span style="height: 40px; background: var(--color-neutral-300); display: block"></span>
+                    <span style="display: grid; gap: 2px; padding: 8px 9px; min-width: 0">
+                      <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-heading); font-weight: 800; font-size: 10px">{{ c.name }}</span>
+                      <span style="font-size: 8px; color: var(--color-neutral-700)">Pop. {{ c.pop }}</span>
+                      <span style="font-size: 8px; color: var(--color-neutral-700)">{{ c.region }} · {{ c.capital }}</span>
+                    </span>
+                  </span>
+                </sc-for>
+              </div>
+              <div style="border-top: 1px solid var(--color-neutral-300); margin-top: 14px; padding-top: 12px; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; align-items: start">
+                <span style="height: 62px; background: var(--color-neutral-300); display: block"></span>
+                <span style="display: grid; gap: 4px; min-width: 0">
+                  <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px">Belgium</span>
+                  <span style="font-size: 9px; color: var(--color-neutral-700)">Native name: België · TLD .be · Euro · Dutch, French, German</span>
+                  <span style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 2px">
+                    <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-600)">Borders</span>
+                    <span style="font-size: 9px; border: 1px solid var(--color-divider); padding: 3px 6px">France</span>
+                    <span style="font-size: 9px; border: 1px solid var(--color-divider); padding: 3px 6px">Germany</span>
+                    <span style="font-size: 9px; border: 1px solid var(--color-divider); padding: 3px 6px">Netherlands</span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </sc-if>
+
+          <h6 style="color: var(--color-neutral-600); margin: 36px 0 4px">What it does</h6>
+          <div style="border-top: 1px solid var(--color-divider)">
+            <sc-for list="{{ current.points }}" as="point" hint-placeholder-count="4">
+              <div style="display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--color-neutral-300); font-size: 15px; line-height: 1.5">
+                <span style="color: var(--color-accent); font-weight: 700">—</span>
+                <span>{{ point }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <aside data-r="aside" style="display: grid; gap: 28px; align-content: start; border-left: 1px solid var(--color-divider); padding-left: 28px">
+          <div>
+            <h6 style="color: var(--color-neutral-600); margin-bottom: 10px">Built with</h6>
+            <div style="display: flex; flex-wrap: wrap; gap: 7px">
+              <sc-for list="{{ current.tech }}" as="t" hint-placeholder-count="5">
+                <span class="tag tag-outline" style="font-size: 12px; white-space: nowrap; display: inline-block; height: auto; line-height: 1.35; padding: 4px 8px">{{ t }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display: grid; gap: 10px">
+            <a class="btn btn-secondary" href="{{ current.href }}" target="_blank" style="justify-content: flex-start; gap: 10px; padding: 12px 14px; font-size: 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>View on GitHub</a>
+            <sc-if value="{{ current.landing }}">
+              <a class="btn {{ current.landingClass2 }}" href="{{ current.landing }}" target="_blank" style="justify-content: flex-start; gap: 10px; padding: 12px 14px; font-size: 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path></svg>{{ current.landingCta }}</a>
+            </sc-if>
+            <sc-if value="{{ current.store }}">
+              <a class="btn btn-primary" href="{{ current.store }}" target="_blank" style="justify-content: flex-start; gap: 10px; padding: 12px 14px; font-size: 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><path d="M21.17 8H12"></path><path d="M3.95 6.06 8.54 14"></path><path d="M10.88 21.94 15.46 14"></path></svg>Chrome Web Store</a>
+            </sc-if>
+          </div>
+          <div>
+            <h6 style="color: var(--color-neutral-600); margin-bottom: 8px">Next case</h6>
+            <span onClick="{{ goNext }}" style="cursor: pointer; font-family: var(--font-heading); font-weight: 800; font-size: 17px; line-height: 1.2; display: block">{{ nextTitle }} →</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+function mark(pairs) {
+  return pairs.map(function (p) {
+    var url = p[1] ? "https://cdn.simpleicons.org/" + p[1] + "/201e1d" : "";
+    var css = url ? 'url("' + url + '")' : (p[2] || "none");
+    return { label: p[0], icon: url || (p[2] ? "inline" : ""), iconCss: css };
+  });
+}
+
+const PROJECTS = [
+  {
+    num: "01", compare: true, kind: "Chrome Extension — v1.2.0",
+    title: "YouTube Tweak — Control YouTube and make it calmer",
+    short: "Declutters YouTube: feature toggles, grid search results, a calm homepage, absolute timestamps and no infinite scroll.",
+    stackLine: "React · TS · Plasmo",
+    blurb: "An extension that declutters the YouTube interface, restores sanity to the timeline, and strips out addictive UI patterns — built for power users who guard their time and focus. Shipping in the Chrome Web Store, free.",
+    points: [
+      "Quick Search — search YouTube from the popup with live autocomplete; open a result by click, Enter, or ⌘ / Ctrl + 1–9",
+      "Fully keyboard driven and RTL-aware: ↓ / ↑ move between input and suggestions, Escape clears, Backspace returns to the input",
+      "Selection-aware: the popup pre-fills with text you had selected, and right-clicking any selection offers “Search on YouTube”",
+      "Smart tab reuse — a result reuses an empty new tab, or opens beside your current one so you never lose your place",
+      "Turn Features On or Off — a Features tab picks exactly which tweaks run, applied instantly to every open YouTube tab",
+      "Intentional Browsing — infinite scroll replaced with a Load More button",
+      "Absolute Timestamps with your preferred date format instead of “2 days ago”",
+      "Grid view for search results — a multi-column card grid keeping only videos, playlists and channels; works on channel search tabs too",
+      "Minimalist Home Page — a calm, Google-style page using YouTube's own search bar, so suggestions, voice search and “/” still work",
+      "Hide Sidebar — the left menu strip and its ☰ button gone on every page",
+      "Feed Filtering — show either Videos or Shorts on the Subscriptions page",
+      "Cleaner popup layout with a single swipeable tab row, plus a keyboard shortcut (Ctrl / ⌘ + Shift + Y) you can remap in chrome://extensions/shortcuts",
+      "Next up: hiding videos by channel or keyword entirely"
+    ],
+    tech: ["React", "TypeScript", "Plasmo", "Sass", "plasmohq/storage", "Chrome Storage API"],
+    href: "https://github.com/GADMuhammad/Youtube-Tweak",
+    landing: "https://you-tube-tweak-landing-page.vercel.app/", landingCta: "Landing page",
+    store: "https://chromewebstore.google.com/detail/youtube-tweak-control-you/oboblbfbeolffgmhmgkjaaamelcmncoi"
+  },
+  {
+    num: "02", mock: true, kind: "Chrome Extension",
+    title: "Bookmarks Finder",
+    short: "A keyboard-first popup that searches hundreds of bookmarks instantly, with a Google fallback.",
+    stackLine: "React · TS · Plasmo",
+    blurb: "A fast, keyboard-first popup for searching and handling bookmarks — made for people whose bookmark lists stopped being browsable years ago.",
+    points: ["Instant fuzzy search across hundreds of bookmarks — 343 in my own profile", "⌘1 – ⌘9 opens any of the top results without leaving the keyboard", "Falls through to a Google search (⌘G) when nothing matches", "Light and dark themes follow the OS automatically via prefers-color-scheme"],
+    tech: ["React", "TypeScript", "Plasmo", "Chrome Extension APIs"],
+    href: "https://github.com/GADMuhammad",
+    landing: "https://bookmarks-finder-landing-page.vercel.app/", landingCta: "Landing page",
+    store: "https://chromewebstore.google.com/detail/bookmarks-finder/gnoinjapogncnbjdflkjlnbhblnnbpch"
+  },
+  {
+    num: "03", dash: true, kind: "Full-stack Dashboard",
+    title: "The Wild Oasis — Admin Dashboard",
+    short: "Hotel back-office: cabin CRUD, check-in workflows, role-based auth and occupancy analytics.",
+    stackLine: "React · TanStack · Supabase",
+    blurb: "An internal administration dashboard for a hotel: feature-based architecture, role-based Supabase authentication and protected routing throughout.",
+    points: ["Server state optimized with TanStack Query — fetching, caching and mutations across cabin CRUD and check-in workflows", "Occupancy and revenue analytics charted with Recharts", "Structured form validation via React Hook Form, with error boundaries and toasts"],
+    tech: ["React", "React Router", "Vite", "TanStack Query", "Supabase", "Tailwind CSS", "Motion", "Recharts", "date-fns"],
+    href: "https://github.com/GADMuhammad",
+    landing: "https://the-wild-oasis-admin-dashboard-2cly-gold.vercel.app/dashboard", landingCta: "Live dashboard"
+  },
+  {
+    num: "04", guest: true, kind: "Next.js Product Site",
+    title: "The Wild Oasis — Guest Website",
+    short: "Guest-facing booking site on Server Components and Server Actions, with Google OAuth and live pricing.",
+    stackLine: "Next.js · NextAuth · Supabase",
+    blurb: "The guest-facing side of the same product, architected on Next.js Server Components for rendering and Server Actions for every database mutation.",
+    points: ["NextAuth v5 Google OAuth with custom callbacks that provision and link guest accounts in Supabase automatically", "Interactive reservation system with live pricing calculations", "Automated date-range blocking driven by existing bookings"],
+    tech: ["Next.js (App Router)", "NextAuth v5", "Supabase", "Tailwind CSS", "Styled Components", "date-fns", "heroicons"],
+    href: "https://github.com/GADMuhammad",
+    landing: "https://the-wild-oasis-xuae.vercel.app/", landingCta: "Live site"
+  },
+  {
+    num: "05", shop: true, kind: "React Interface",
+    title: "Product List with Cart",
+    short: "A dessert shop interaction study: live totals, an order modal and a cart that survives refresh.",
+    stackLine: "React 19 · Framer Motion",
+    blurb: "A dessert shop built as an interaction study: browse the grid, adjust quantities, watch the total update live, and confirm the order in a summary modal — every transition animated.",
+    points: [
+      "Add to cart and adjust quantities with + / − controls, or remove an item outright",
+      "Live item count and order total, with an empty-cart placeholder state",
+      "“Confirm Order” summary modal, and “Start a New Order” to reset",
+      "Cart persisted in localStorage, so a refresh never loses the order",
+      "Responsive layout with per-breakpoint product images via <picture>",
+      "Staggered entrances and spring transitions throughout, plus a post-order toast"
+    ],
+    tech: ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "react-toastify", "Ionicons"],
+    href: "https://github.com/GADMuhammad/Product-list-with-cart",
+    landing: "https://product-list-with-cart-drab-nine.vercel.app/", landingCta: "Live site"
+  },
+  {
+    num: "06", atlas: true, kind: "React SPA",
+    title: "The World Countries",
+    short: "An atlas of 249 countries: fuzzy search, composable filters, border hopping and a remembered theme.",
+    stackLine: "React · Fuse.js · Router",
+    blurb: "An interactive atlas of all 249 countries and territories: browse them as cards, search and filter, open any country in full detail, and hop between neighbours through their shared borders — in a light or dark theme that is remembered across visits.",
+    points: [
+      "Country grid — flag, population, region and capital per card, with lazy-loaded flags and a fade-in on load",
+      "Fuzzy search (Fuse.js) — typo-tolerant and out-of-order across name, native name, capital, ISO alpha-3, currency and language; “gemany” finds Germany, “tokyo” finds Japan",
+      "One dropdown filters by continent, sub-region, spoken language or currency; it composes with the search text (AND), and an empty result shows a friendly illustration",
+      "Detail page with native name, TLD, population, currencies, region, sub-region, languages, area and capital — plus a button per bordering country",
+      "Filter state lives in the URL (?q=…&region=…), so results are shareable and survive navigating into a country and back",
+      "Light / dark theme applied before first paint from localStorage — no flash on reload",
+      "Offline-friendly: the dataset is fetched once and cached in memory and localStorage, so warm loads render instantly with no network",
+      "Responsive from a four-column grid down to one, with breakpoints at 1300 / 1190 / 930 / 860 / 580 px"
+    ],
+    tech: ["React 19", "Vite 6", "React Router 7", "Tailwind CSS 3", "react-select", "Fuse.js", "styled-components"],
+    href: "https://github.com/GADMuhammad/REST-Countries-API-with-color-theme-switcher",
+    landing: "https://rest-countries-api-with-color-theme-seven-zeta.vercel.app/", landingCta: "Live site"
+  }
+];
+
+class Component extends DCLogic {
+  state = { open: null };
+  renderVals() {
+    const open = this.state.open;
+    const current = open === null ? PROJECTS[0] : PROJECTS[open];
+    const nextIdx = open === null ? 1 : (open + 1) % PROJECTS.length;
+    return {
+      countries: [
+        { name: "Germany", pop: "81,770,900", region: "Europe", capital: "Berlin" },
+        { name: "United States", pop: "323,947,000", region: "Americas", capital: "Washington" },
+        { name: "Brazil", pop: "206,135,893", region: "Americas", capital: "Brasília" },
+        { name: "Iceland", pop: "334,300", region: "Europe", capital: "Reykjavík" }
+      ],
+      desserts: [
+        { kind: "Waffle", name: "Waffle with Berries", price: "$6.50" },
+        { kind: "Crème Brûlée", name: "Vanilla Bean Brûlée", price: "$7.00" },
+        { kind: "Macaron", name: "Macaron Mix of Five", price: "$8.00" },
+        { kind: "Tiramisu", name: "Classic Tiramisu", price: "$5.50" },
+        { kind: "Baklava", name: "Pistachio Baklava", price: "$4.00" },
+        { kind: "Cake", name: "Red Velvet Cake", price: "$4.50" }
+      ],
+      cartRows: [
+        { name: "Classic Tiramisu", qty: "2 × $5.50", total: "$11.00" },
+        { name: "Vanilla Bean Brûlée", qty: "1 × $7.00", total: "$7.00" },
+        { name: "Red Velvet Cake", qty: "1 × $4.50", total: "$4.50" }
+      ],
+      cabins: [
+        { name: "Cabin 001", capacity: "Up to 2 guests", price: "$400 / night" },
+        { name: "Cabin 002", capacity: "Up to 2 guests", price: "$325 / night" },
+        { name: "Cabin 003", capacity: "Up to 4 guests", price: "$300 / night" },
+        { name: "Cabin 004", capacity: "Up to 4 guests", price: "$450 / night" }
+      ],
+      calendar: [
+        { n: "1", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "2", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "3", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "4", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "5", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "6", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "7", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "8", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "9", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "10", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "11", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "12", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "13", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "14", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "15", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "16", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "17", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "18", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "19", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "20", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "21", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "22", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "23", bg: "var(--color-text)", fg: "var(--color-bg)" },
+        { n: "24", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "25", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "26", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "27", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "28", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "29", bg: "transparent", fg: "var(--color-neutral-700)" },
+        { n: "30", bg: "transparent", fg: "var(--color-neutral-700)" }
+      ],
+      dashStats: [
+        { label: "Bookings", value: "12" },
+        { label: "Sales", value: "$39,335" },
+        { label: "Check-ins", value: "6" },
+        { label: "Occupancy", value: "48%" }
+      ],
+      todayRows: [
+        { state: "Arriving", guest: "Jonathan Smith", nights: "7 nights", action: "Check in" },
+        { state: "Departing", guest: "Jonas S.", nights: "5 nights", action: "Check out" },
+        { state: "Arriving", guest: "David Smith", nights: "11 nights", action: "Check in" },
+        { state: "Departing", guest: "Maria Rodriguez", nights: "2 nights", action: "Check out" },
+        { state: "Arriving", guest: "Abdul Rahman", nights: "5 nights", action: "Check in" }
+      ],
+      stayBars: [
+        { label: "2 nights", pct: "34%", count: "4" },
+        { label: "3 nights", pct: "48%", count: "6" },
+        { label: "4–5 nights", pct: "26%", count: "3" },
+        { label: "8–14 nights", pct: "18%", count: "2" }
+      ],
+      bookingRows: [
+        { cabin: "006", guest: "David Smith", email: "david@gmail.com", dates: "31 May → 11 Jun", status: "Unconfirmed", amount: "$7,700" },
+        { cabin: "008", guest: "Abdul Rahman", email: "abdul@gmail.com", dates: "31 May → 05 Jun", status: "Unconfirmed", amount: "$7,750" },
+        { cabin: "003", guest: "Maria Rodriguez", email: "maria@gmail.com", dates: "29 May → 31 May", status: "Checked in", amount: "$600" },
+        { cabin: "004", guest: "Khadija Ahmed", email: "khadija@gmail.com", dates: "27 May → 08 Jun", status: "Checked in", amount: "$6,120" },
+        { cabin: "005", guest: "John Doe", email: "johndoe@gmail.com", dates: "25 May → 27 May", status: "Checked out", amount: "$820" }
+      ],
+      threeRows: [1, 2, 3],
+      sixCards: [1, 2, 3, 4, 5, 6],
+      tweakChips: ["Toggle every feature on or off", "Hide the sidebar", "A quieter, search-like homepage", "⌘ / Ctrl + Shift + Y"],
+      compareRows: [
+        { title: "Surviving the age of noise | Podcast", relative: "797K views · 9 months ago", absolute: "797K views · 12 May 2025" },
+        { title: "You are not a bad person — on setbacks", relative: "8.8K views · 7 months ago", absolute: "8.8K views · 5 Jan 2026" },
+        { title: "Secrets nobody tells you about Claude Code", relative: "26K views · 7 months ago", absolute: "26K views · 12 Jan 2026" }
+      ],
+      mockRows: [
+        { title: "Gmail", domain: "accounts.google.com", key: "⌘1", iconCss: 'url("https://cdn.simpleicons.org/gmail/201e1d")' },
+        { title: "YouTube", domain: "youtube.com", key: "⌘2", iconCss: 'url("https://cdn.simpleicons.org/youtube/201e1d")' },
+        { title: "Maps", domain: "maps.google.com", key: "⌘3", iconCss: 'url("https://cdn.simpleicons.org/googlemaps/201e1d")' },
+        { title: "Translate", domain: "translate.google.com", key: "⌘4", iconCss: 'url("https://cdn.simpleicons.org/googletranslate/201e1d")' },
+        { title: "MDN Web Docs", domain: "developer.mozilla.org", key: "⌘5", iconCss: 'url("https://cdn.simpleicons.org/mdnwebdocs/201e1d")' },
+        { title: "GitHub", domain: "github.com", key: "⌘6", iconCss: 'url("https://cdn.simpleicons.org/github/201e1d")' },
+        { title: "X Twitter", domain: "x.com", key: "⌘7", iconCss: 'url("https://cdn.simpleicons.org/x/201e1d")' }
+      ],
+      available: true,
+      stack: [
+        { num: "01", label: "Libraries & Frameworks", items: mark([["Next.js", "nextdotjs"], ["React", "react"], ["Redux Toolkit", "redux"], ["React Router", "reactrouter"], ["TanStack Query", "reactquery"]]) },
+        { num: "02", label: "Languages & Core Web", items: mark([["JavaScript", "javascript"], ["TypeScript", "typescript"], ["HTML5", "html5"]]) },
+        { num: "03", label: "Styling & Animation", items: mark([["CSS3", "css"], ["Tailwind CSS", "tailwindcss"], ["Sass", "sass"], ["Styled Components", "styledcomponents"], ["Motion", "framer"]]) },
+        { num: "04", label: "Web Extensions", items: mark([["Plasmo Framework", "", "url(\"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23201e1d%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Crect x=%273%27 y=%273%27 width=%279.5%27 height=%279.5%27/%3E%3Crect x=%2711.5%27 y=%2711.5%27 width=%279.5%27 height=%279.5%27/%3E%3C/svg%3E\")"], ["Chrome Extension APIs", "googlechrome"], ["Chrome Storage API", "googlechrome"]]) },
+        { num: "05", label: "Backend & Auth", items: mark([["Supabase", "supabase"], ["NextAuth.js", "", "url(\"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23201e1d%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z%27/%3E%3Cpath d=%27M9 12l2 2 4-4%27/%3E%3C/svg%3E\")"]]) }
+      ],
+      onIndex: open === null,
+      onCase: open !== null,
+      crumb: open === null ? "Portfolio" : "Case study",
+      current: Object.assign({}, current, {
+        compare: !!current.compare, mock: !!current.mock, dash: !!current.dash,
+        guest: !!current.guest, shop: !!current.shop, atlas: !!current.atlas,
+        landingClass2: current.store ? "btn-secondary" : "btn-primary"
+      }),
+      nextTitle: PROJECTS[nextIdx].title,
+      goNext: () => { this.setState({ open: nextIdx }); window.scrollTo(0, 0); },
+      goHome: () => { this.setState({ open: null }); window.scrollTo(0, 0); },
+      projects: PROJECTS.map((p, i) => ({
+        ...p,
+        open: () => { this.setState({ open: i }); window.scrollTo(0, 0); }
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
