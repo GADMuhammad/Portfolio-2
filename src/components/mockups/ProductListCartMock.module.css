@@ -1,0 +1,153 @@
+.pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 16px;
+}
+
+.h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 22px;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.item {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.image {
+  aspect-ratio: 1;
+  background: var(--color-neutral-300);
+  display: block;
+  position: relative;
+}
+
+.addBtn {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: var(--color-neutral-100);
+  border: 1px solid var(--color-text);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 4px;
+  text-align: center;
+}
+
+.ellip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 8px;
+  color: var(--color-neutral-600);
+}
+
+.name {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.price {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--color-accent-700);
+}
+
+/* — cart — */
+.cart {
+  border: 1px solid var(--color-divider);
+  padding: 12px;
+  align-content: start;
+  display: grid;
+  gap: 8px;
+}
+
+.cartTitle {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--color-accent-700);
+}
+
+.cartRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px;
+  border-bottom: 1px solid var(--color-neutral-300);
+  padding-bottom: 6px;
+}
+
+.cartText {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.qty {
+  font-size: 8px;
+  color: var(--color-neutral-600);
+}
+
+.lineTotal {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.orderTotal {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  padding-top: 2px;
+}
+
+.orderTotalLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--color-neutral-600);
+}
+
+.orderTotalValue {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.confirm {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.note {
+  font-size: 8px;
+  color: var(--color-neutral-600);
+}
+
+/* README §responsive ≤1000px — paired figure collapses to one column. */
+@media (max-width: 1000px) {
+  .pair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}

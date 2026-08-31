@@ -1,11 +1,15 @@
 import type { RouteRecord } from 'vite-react-ssg'
 import { Layout } from '@/components/Layout'
 import { IndexPage } from '@/pages/IndexPage'
+import { CasePage } from '@/pages/CasePage'
+import { projects } from '@/content/projects'
 
 /**
- * Route table. Real routes, not component state:
+ * Real routes, not component state:
  *   /            → index
- *   /work/:slug  → per-project case page  (added in step 3, with getStaticPaths)
+ *   /work/:slug  → per-project case page
+ * getStaticPaths prerenders one HTML file per project (the Vite equivalent of
+ * Next's generateStaticParams).
  */
 export const routes: RouteRecord[] = [
   {
@@ -16,6 +20,12 @@ export const routes: RouteRecord[] = [
         index: true,
         element: <IndexPage />,
         entry: 'src/pages/IndexPage.tsx',
+      },
+      {
+        path: 'work/:slug',
+        element: <CasePage />,
+        entry: 'src/pages/CasePage.tsx',
+        getStaticPaths: () => projects.map((p) => `/work/${p.slug}`),
       },
     ],
   },
