@@ -1,0 +1,221 @@
+.stack {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.head {
+  margin-bottom: 18px;
+}
+
+.kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+.h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 24px;
+  margin: 6px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.head .h4:first-child {
+  margin-top: 0;
+}
+
+.sub {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-neutral-700);
+}
+
+.tinyLabel,
+.tinyLabelInk {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tinyLabel {
+  color: var(--color-neutral-600);
+}
+
+/* — List → Grid — */
+.compareGrid {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.listPane {
+  border: 1px solid var(--color-divider);
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.listRow {
+  display: grid;
+  grid-template-columns: 1fr 54px;
+  gap: 8px;
+  align-items: center;
+}
+
+.listLines {
+  display: grid;
+  gap: 5px;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  color: var(--color-accent);
+}
+
+.gridPane {
+  border: 2px solid var(--color-text);
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.card {
+  display: grid;
+  gap: 4px;
+}
+
+/* — feature chips — */
+.chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.chip {
+  border: 1px solid var(--color-divider);
+  padding: 9px 11px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* — infinite scroll vs Load More — */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.beforePane {
+  border: 1px solid var(--color-divider);
+  padding: 12px;
+}
+
+.afterPane {
+  border: 2px solid var(--color-text);
+  padding: 12px;
+}
+
+.paneHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.badgeOutline,
+.badgeRed {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+}
+
+.badgeOutline {
+  border: 1px solid var(--color-divider);
+  color: var(--color-neutral-700);
+}
+
+.badgeRed {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.videoRow {
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 9px;
+  margin-bottom: 11px;
+  align-items: start;
+}
+
+.videoText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.videoTitle {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.videoMeta {
+  font-size: 9px;
+  color: var(--color-neutral-600);
+}
+
+.beforeFoot {
+  border-top: 1px solid var(--color-neutral-300);
+  padding-top: 10px;
+  font-size: 10px;
+  color: var(--color-neutral-600);
+}
+
+.afterFoot {
+  border-top: 1px solid var(--color-neutral-300);
+  padding-top: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.loadMore {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 9px 10px;
+}
+
+/* README §responsive ≤1000px — 2-column mockup figures collapse to one. */
+@media (max-width: 1000px) {
+  .compareGrid,
+  .pair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+}

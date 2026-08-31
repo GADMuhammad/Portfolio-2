@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Download } from 'lucide-react'
+import { DownloadIcon } from './icons'
 import styles from './SiteHeader.module.css'
 
 /**
@@ -29,7 +29,7 @@ export function SiteHeader() {
             href="/assets/Muhammad-Gad-CV.pdf"
             download="Muhammad-Gad-CV.pdf"
           >
-            <Download size={15} strokeWidth={2} aria-hidden="true" />
+            <DownloadIcon size={15} />
             Download CV
           </a>
         </div>

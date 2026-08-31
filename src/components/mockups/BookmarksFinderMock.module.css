@@ -1,0 +1,81 @@
+.field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--color-divider);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.fieldText {
+  font-size: 14px;
+  color: var(--color-neutral-600);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-neutral-300);
+}
+
+.favicon {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--color-neutral-300);
+  display: grid;
+  place-items: center;
+}
+
+.favicon img {
+  opacity: 0.9;
+}
+
+.text {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.domain {
+  font-size: 11px;
+  color: var(--color-neutral-600);
+  letter-spacing: 0.01em;
+}
+
+.key {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border: 1px solid var(--color-divider);
+  color: var(--color-neutral-700);
+  white-space: nowrap;
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  border-top: 2px solid var(--color-text);
+  padding-top: 14px;
+}
+
+.fallbackText {
+  font-size: 13px;
+}
+
+.fallbackQuery {
+  color: var(--color-accent-700);
+  font-weight: 700;
+}

@@ -1,0 +1,21 @@
+.panel {
+  border: 2px solid var(--color-text);
+  background: var(--color-neutral-100);
+  padding: 20px;
+}
+
+.panel + .panel {
+  margin-top: 20px;
+}
+
+.block {
+  display: block;
+  background: var(--color-neutral-300);
+}
+
+/* README §responsive ≤700px — mockup panel padding 20px → 14px. */
+@media (max-width: 700px) {
+  .panel {
+    padding: 14px;
+  }
+}
