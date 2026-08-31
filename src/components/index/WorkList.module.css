@@ -1,0 +1,98 @@
+.section {
+  /* SectionHead(variant="work") supplies the 40/20 vertical padding above. */
+}
+
+.rows {
+  border-top: 2px solid var(--color-text);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1.05fr) minmax(0, 1fr) 150px;
+  gap: 24px;
+  align-items: start;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--color-divider);
+  color: var(--color-text);
+}
+
+.row:hover {
+  background: var(--color-neutral-200);
+  color: var(--color-text);
+}
+
+.num {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--color-accent);
+}
+
+.headingCell {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.kind {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.short {
+  font-size: 15px;
+  line-height: 1.5;
+  min-width: 0;
+}
+
+.metaCell {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.stackLine {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+}
+
+.openChip {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 7px 10px;
+}
+
+/* README §responsive ≤1000px — number in the narrow left column, the three
+   text blocks stacked under one another in the right column. (The prototype's
+   raw 4-column→2-column swap squeezes the summary into the 40px column; this
+   follows the README's stated intent instead.) */
+@media (max-width: 1000px) {
+  .row {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 6px 16px;
+  }
+
+  .headingCell,
+  .short,
+  .metaCell {
+    grid-column: 2;
+  }
+}

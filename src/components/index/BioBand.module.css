@@ -1,0 +1,138 @@
+.band {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 240px;
+  gap: 0;
+  border-bottom: 2px solid var(--color-divider);
+}
+
+.col {
+  padding: 40px 32px;
+}
+
+.col:nth-child(1) {
+  padding: 40px 32px 40px 0;
+  border-right: 1px solid var(--color-divider);
+}
+
+.col:nth-child(2) {
+  border-right: 1px solid var(--color-divider);
+}
+
+.col:nth-child(3) {
+  padding: 40px 0 40px 32px;
+}
+
+.label {
+  color: var(--color-neutral-600);
+  margin: 0 0 14px;
+}
+
+.bio {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.list {
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.list:last-child {
+  margin-bottom: 0;
+}
+
+/* — statement poster — */
+.poster {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  min-height: 560px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.posterKicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.posterHeading {
+  font-size: clamp(30px, 4.6vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--color-bg);
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.posterFoot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 2px solid rgba(243, 242, 242, 0.5);
+  padding-top: 20px;
+}
+
+.posterLine {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 340px;
+}
+
+.posterMark {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+/* — metrics column — */
+.metrics {
+  display: grid;
+  gap: 34px;
+  align-content: start;
+}
+
+.metricWords {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.metricNumber {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1;
+}
+
+/* README §responsive ≤1000px — collapse to one column; right borders become
+   bottom borders; side padding dropped. */
+@media (max-width: 1000px) {
+  .band {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .col,
+  .col:nth-child(1),
+  .col:nth-child(3) {
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .col:not(:last-child) {
+    border-bottom: 1px solid var(--color-divider);
+  }
+}

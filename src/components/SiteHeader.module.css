@@ -1,0 +1,80 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-divider);
+}
+
+/* .shell supplies max-width + auto margins + side padding; the header adds
+   only the vertical padding and the flex row. */
+.inner {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* The mark is a logo glyph and the wordmark sits right beside it, so the brand
+   link never takes the global accent hover. */
+.brand,
+.brand:hover {
+  color: var(--color-text);
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.crumb {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+}
+
+.cv {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  gap: 8px;
+  padding: 9px 13px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* README §responsive ≤700px: breadcrumb hidden, brand + CV button remain. */
+@media (max-width: 700px) {
+  .crumb {
+    display: none;
+  }
+}
