@@ -178,6 +178,42 @@ figure {
 }
 
 /* ==========================================================================
+   Scroll-driven section reveals
+
+   Any element with `.reveal` fades and rises into place on its own view()
+   timeline, so every section animates independently as it scrolls in — pure
+   CSS, no JS, no observers. Progressive enhancement: with no support for
+   `animation-timeline`, or with reduced-motion preferred, the base rule leaves
+   the element fully visible and static.
+   ========================================================================== */
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(64px);
+    clip-path: inset(0 0 100% 0);
+  }
+  55% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-rise cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 42%;
+    }
+  }
+}
+
+/* ==========================================================================
    Design-system component classes — ported in intent from styles.css
    (.hr, .btn*, .tag*). The design markup applies these by name.
    ========================================================================== */

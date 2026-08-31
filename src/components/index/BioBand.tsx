@@ -4,9 +4,9 @@ import styles from './BioBand.module.css'
  * README §2.3 — three-column band: biography/contact/what-I-do · the red
  * statement poster · the four metrics. 1px dividers between columns, 2px below.
  */
-export function BioBand() {
+export function BioBand({ className }: { className?: string }) {
   return (
-    <div className={styles.band}>
+    <div className={`${styles.band} ${className ?? ''}`}>
       <div className={styles.col}>
         <h6 className={styles.label}>Biography</h6>
         <p className={styles.bio}>

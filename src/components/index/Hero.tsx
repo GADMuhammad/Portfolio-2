@@ -1,9 +1,9 @@
 import styles from './Hero.module.css'
 
 /** README §2.1 — kicker, stacked H1, lede. Bottom 2px divider. */
-export function Hero() {
+export function Hero({ className }: { className?: string }) {
   return (
-    <div className={styles.hero}>
+    <div className={`${styles.hero} ${className ?? ''}`}>
       <span className={styles.kicker}>Frontend Engineer — Tanta, Egypt</span>
       <h1 className={styles.title}>
         Muhammad

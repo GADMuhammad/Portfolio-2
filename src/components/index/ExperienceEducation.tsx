@@ -23,9 +23,9 @@ const entries = [
 ]
 
 /** README §2.6 — three equal columns between 2px rules, 1px dividers between. */
-export function ExperienceEducation() {
+export function ExperienceEducation({ className }: { className?: string }) {
   return (
-    <section id="path" className={styles.section}>
+    <section id="path" className={`${styles.section} ${className ?? ''}`}>
       <SectionHead title="Experience & Education" meta="2020 — present" />
       <div className={styles.grid}>
         {entries.map((e) => (

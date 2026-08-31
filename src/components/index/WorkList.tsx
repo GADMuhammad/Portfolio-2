@@ -7,13 +7,15 @@ import styles from './WorkList.module.css'
  * README §2.5 — the ruled list of six projects. Each row is a real <Link> to
  * the case page (the prototype used clickable spans).
  */
-export function WorkList() {
+export function WorkList({ className }: { className?: string }) {
   return (
-    <section className={styles.section}>
-      <SectionHead title="Work" meta="Six projects — open one for the full case" variant="work" />
+    <section className={`${styles.section} ${className ?? ''}`}>
+      <div className="reveal">
+        <SectionHead title="Work" meta="Six projects — open one for the full case" variant="work" />
+      </div>
       <div className={styles.rows}>
         {projects.map((p) => (
-          <Link className={styles.row} to={`/work/${p.slug}`} key={p.slug}>
+          <Link className={`${styles.row} reveal`} to={`/work/${p.slug}`} key={p.slug}>
             <span className={styles.num}>{p.num}</span>
             <span className={styles.headingCell}>
               <span className={styles.kind}>{p.kind}</span>

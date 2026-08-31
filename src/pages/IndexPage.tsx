@@ -22,15 +22,15 @@ export function IndexPage() {
       </Head>
 
       <main className="shell">
-        <Hero />
-        <AvailabilityBar available />
-        <BioBand />
+        <Hero className="reveal" />
+        <AvailabilityBar available className="reveal" />
+        <BioBand className="reveal" />
         <TheStack />
         <WorkList />
-        <ExperienceEducation />
+        <ExperienceEducation className="reveal" />
       </main>
 
-      <ContactFooter />
+      <ContactFooter className="reveal" />
     </>
   )
 }

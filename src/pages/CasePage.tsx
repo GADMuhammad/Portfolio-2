@@ -41,18 +41,22 @@ export function CasePage() {
 
         <div className={styles.body}>
           <div className={styles.main}>
-            <span className={styles.kicker}>
-              {project.num} — {project.kind}
-            </span>
-            <h1 className={styles.title}>{project.title}</h1>
-            <p className={styles.blurb}>{project.blurb}</p>
+            <div className="reveal">
+              <span className={styles.kicker}>
+                {project.num} — {project.kind}
+              </span>
+              <h1 className={styles.title}>{project.title}</h1>
+              <p className={styles.blurb}>{project.blurb}</p>
+            </div>
 
-            <Mockup mockup={project.mockup} />
+            <div className="reveal">
+              <Mockup mockup={project.mockup} />
+            </div>
 
-            <h2 className={styles.whatLabel}>What it does</h2>
+            <h2 className={`${styles.whatLabel} reveal`}>What it does</h2>
             <div className={styles.features}>
               {project.points.map((point, i) => (
-                <div className={styles.feature} key={i}>
+                <div className={`${styles.feature} reveal`} key={i}>
                   <span className={styles.marker} aria-hidden="true">
                     —
                   </span>
@@ -62,7 +66,7 @@ export function CasePage() {
             </div>
           </div>
 
-          <aside className={styles.aside}>
+          <aside className={`${styles.aside} reveal`}>
             <div>
               <h2 className={styles.asideLabel}>Built with</h2>
               <div className={styles.tags}>

@@ -1,9 +1,9 @@
 import styles from './ContactFooter.module.css'
 
 /** README §2.7 — contact footer: 2px top rule, three label + link columns. */
-export function ContactFooter() {
+export function ContactFooter({ className }: { className?: string }) {
   return (
-    <footer className="shell">
+    <footer className={`shell ${className ?? ''}`}>
       <div className={styles.grid}>
         <span className={styles.item}>
           <span className={styles.label}>Email</span>
