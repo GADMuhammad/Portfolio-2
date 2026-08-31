@@ -2,6 +2,8 @@
   border: 2px solid var(--color-text);
   background: var(--color-neutral-100);
   padding: 20px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .panel + .panel {

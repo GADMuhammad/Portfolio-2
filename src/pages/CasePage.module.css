@@ -36,6 +36,8 @@
 
 .main {
   min-width: 0;
+  /* A mockup can never widen the page; its own scroll wrappers handle overflow. */
+  overflow-x: clip;
 }
 
 .kicker {

@@ -1,5 +1,6 @@
 .stack {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
   min-width: 0;
 }
@@ -276,6 +277,18 @@
   text-align: right;
 }
 
+/* The 5-column table keeps a fixed floor and scrolls inside its own wrapper so
+   it can never widen the page (README §responsive ≤700px — but harmless at any
+   width: it fits without a scrollbar on wide layouts). */
+.scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scrollInner {
+  min-width: 460px;
+}
+
 .tableActions {
   display: flex;
   gap: 8px;
@@ -311,13 +324,14 @@
   }
 }
 
-/* README §responsive ≤700px — the 5-column table scrolls horizontally. */
+/* README §responsive ≤700px — the 4-up stat grid drops to 2 columns; the
+   panel headers wrap so the filter chips never overflow. */
 @media (max-width: 700px) {
-  .scroll {
-    overflow-x: auto;
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .scrollInner {
-    min-width: 460px;
+  .panelHead {
+    flex-wrap: wrap;
   }
 }
