@@ -79,12 +79,10 @@ export function CasePage() {
             </div>
 
             <div className={styles.buttons}>
-              {project.title !== "YouTube Tweak — Control YouTube and make it calmer" && (
-                <a className={`btn btn-secondary ${styles.btn}`} href={project.href} target="_blank" rel="noreferrer">
-                  <GithubIcon size={16} />
-                  View on GitHub
-                </a>
-              )}
+              <a className={`btn btn-secondary ${styles.btn}`} href={project.href} target="_blank" rel="noreferrer">
+                <GithubIcon size={16} />
+                View on GitHub
+              </a>
               {project.landing && (
                 <a className={`btn ${project.store ? "btn-secondary" : "btn-primary"} ${styles.btn}`} href={project.landing} target="_blank" rel="noreferrer">
                   <ExternalLinkIcon size={16} />
