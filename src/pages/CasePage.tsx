@@ -1,13 +1,13 @@
-import { Link, useParams } from 'react-router-dom'
-import { Head } from 'vite-react-ssg'
-import { projects, getProject } from '@/content/projects'
-import { Mockup } from '@/components/mockups/Mockup'
-import { GithubIcon, ExternalLinkIcon, ChromeIcon } from '@/components/icons'
-import styles from './CasePage.module.css'
+import { Link, useParams } from "react-router-dom";
+import { Head } from "vite-react-ssg";
+import { projects, getProject } from "@/content/projects";
+import { Mockup } from "@/components/mockups/Mockup";
+import { GithubIcon, ExternalLinkIcon, ChromeIcon } from "@/components/icons";
+import styles from "./CasePage.module.css";
 
 export function CasePage() {
-  const { slug } = useParams<{ slug: string }>()
-  const project = slug ? getProject(slug) : undefined
+  const { slug } = useParams<{ slug: string }>();
+  const project = slug ? getProject(slug) : undefined;
 
   if (!project) {
     return (
@@ -16,11 +16,11 @@ export function CasePage() {
           That case doesn’t exist. <Link to="/">Back to all work</Link>.
         </p>
       </main>
-    )
+    );
   }
 
-  const index = projects.findIndex((p) => p.slug === project.slug)
-  const next = projects[(index + 1) % projects.length]
+  const index = projects.findIndex((p) => p.slug === project.slug);
+  const next = projects[(index + 1) % projects.length];
 
   return (
     <>
@@ -79,33 +79,20 @@ export function CasePage() {
             </div>
 
             <div className={styles.buttons}>
-              <a
-                className={`btn btn-secondary ${styles.btn}`}
-                href={project.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GithubIcon size={16} />
-                View on GitHub
-              </a>
+              {project.title !== "YouTube Tweak — Control YouTube and make it calmer" && (
+                <a className={`btn btn-secondary ${styles.btn}`} href={project.href} target="_blank" rel="noreferrer">
+                  <GithubIcon size={16} />
+                  View on GitHub
+                </a>
+              )}
               {project.landing && (
-                <a
-                  className={`btn ${project.store ? 'btn-secondary' : 'btn-primary'} ${styles.btn}`}
-                  href={project.landing}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className={`btn ${project.store ? "btn-secondary" : "btn-primary"} ${styles.btn}`} href={project.landing} target="_blank" rel="noreferrer">
                   <ExternalLinkIcon size={16} />
                   {project.landingCta}
                 </a>
               )}
               {project.store && (
-                <a
-                  className={`btn btn-primary ${styles.btn}`}
-                  href={project.store}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className={`btn btn-primary ${styles.btn}`} href={project.store} target="_blank" rel="noreferrer">
                   <ChromeIcon size={16} />
                   Chrome Web Store
                 </a>
@@ -122,5 +109,5 @@ export function CasePage() {
         </div>
       </main>
     </>
-  )
+  );
 }
